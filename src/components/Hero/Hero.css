@@ -1,0 +1,192 @@
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 130px 10% 56px;
+    text-align: center;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 92px 8% 40px;
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 42px;
+    pointer-events: none;
+    background: linear-gradient(135deg, rgba(255,255,255,.06), transparent 38%, rgba(110,231,249,.05));
+}
+
+.hero-ambient {
+    position: absolute;
+    border-radius: 999px;
+    filter: blur(14px);
+    pointer-events: none;
+}
+
+.hero-ambient-one {
+    width: 220px;
+    height: 220px;
+    top: 22%;
+    left: 8%;
+    background: rgba(110,231,249,.2);
+    animation: floatY 7s ease-in-out infinite;
+}
+
+.hero-ambient-two {
+    width: 260px;
+    height: 260px;
+    right: 9%;
+    bottom: 14%;
+    background: rgba(244,114,182,.16);
+    animation: pulseGlow 6s ease-in-out infinite;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 980px;
+}
+
+.hero-kicker {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    margin-bottom: 26px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: rgba(255,255,255,.055);
+    color: var(--primary);
+    font-size: .9rem;
+    font-weight: 600;
+    letter-spacing: 0;
+    box-shadow: 0 12px 42px rgba(110,231,249,.08);
+}
+
+.hero h1 {
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    background: linear-gradient(90deg, #6ee7f9, #a78bfa, #f472b6, #34d399);
+    background-size: 260% 260%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradientShift 8s ease infinite;
+    text-shadow: 0 16px 80px rgba(167,139,250,.18);
+}
+
+.hero h2 {
+    max-width: 900px;
+    margin: 26px auto 28px;
+    font-size: clamp(1.35rem, 2.2vw, 2.15rem);
+    font-weight: 600;
+    color: var(--text);
+}
+
+.hero p {
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.9;
+    font-size: 1.1rem;
+    color: var(--subtext);
+}
+
+.hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3,minmax(0,1fr));
+    gap: 14px;
+    max-width: 680px;
+    margin: 42px auto 0;
+}
+
+.hero-stat {
+    padding: 18px 14px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: rgba(255,255,255,.045);
+    backdrop-filter: blur(16px);
+}
+
+.hero-stat strong {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 1.55rem;
+    color: var(--primary);
+}
+
+.hero-stat span {
+    color: var(--subtext);
+    font-size: .88rem;
+}
+
+.hero-buttons {
+    margin-top: 44px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.hero-buttons a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 54px;
+    padding: 15px 24px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,.055);
+    color: var(--text);
+    box-shadow: 0 12px 36px rgba(0,0,0,.16);
+    transition: border-color .3s, background .3s, box-shadow .3s;
+}
+
+.hero-buttons a:hover {
+    border-color: rgba(110,231,249,.58);
+    background: rgba(110,231,249,.1);
+    box-shadow: 0 18px 48px rgba(110,231,249,.14);
+}
+
+.resume-btn {
+    background: var(--gradient) !important;
+    border: none !important;
+    color: #07101e !important;
+    font-weight: 700;
+}
+
+.scroll-text {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 62px;
+    color: var(--subtext);
+    animation: scrollBounce 2.2s ease-in-out infinite;
+}
+
+@media(max-width:768px) {
+    .hero {
+        min-height: auto;
+        padding-top: 116px;
+    }
+
+    .hero::before {
+        inset: 84px 4% 28px;
+        border-radius: 30px;
+    }
+
+    .hero h1 {
+        font-size: clamp(3.1rem, 16vw, 4.6rem);
+    }
+
+    .hero-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-buttons a {
+        width: 100%;
+        justify-content: center;
+    }
+}
